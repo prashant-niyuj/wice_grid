@@ -7,7 +7,7 @@ module Wice
         conditions = [[]]
         if opts[:fr]
           conditions[0] << " #{@column_wrapper.alias_or_table_name(table_alias)}.#{@column_wrapper.name} >= ? "
-          conditions << opts[:fr].to_time
+          conditions << opts[:fr].to_datetime
           #Convert user time zone to utc 
           #conditions << Time.zone.parse(opts[:fr]).utc.to_s(:form_format)
         end
