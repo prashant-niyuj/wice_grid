@@ -14,7 +14,7 @@ module Wice
 
         if opts[:to]
           conditions[0] << " #{@column_wrapper.alias_or_table_name(table_alias)}.#{@column_wrapper.name} <= ? "
-          conditions << (opts[:to].to_date + 1)
+          conditions << (opts[:to].to_datetime + 1)
         end
 
         return false if conditions.size == 1
